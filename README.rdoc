@@ -1,0 +1,10 @@
+== Wedding!
+
+Sarah and I are getting marrid, so I'm building a website
+
+TODO:
+* Have a login system
+* Have editable sections
+* Add styling?
+* Add markdown styling for sections
+* Handle RSVPs?
