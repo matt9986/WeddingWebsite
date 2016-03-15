@@ -1,3 +1,12 @@
 // Place all the styles related to the Exhibits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.menu {
+  float: left;
+  border-right-width: 2px;
+  border-right-color: black;
+  height: 100vh;
+  border-right-style: solid;
+  width: 100px;
+  margin-right: 10px;
+}
