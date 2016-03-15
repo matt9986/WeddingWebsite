@@ -1,4 +1,5 @@
 div.menu
   h3 Exhibits
   ul
-    li 1st
+    - all_exhibits.each do |exhibit|
+      li exhibit.title
