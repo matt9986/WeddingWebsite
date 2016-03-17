@@ -1,6 +1,7 @@
 class ExhibitsController < ApplicationController
   def index
-    render "index"
+    @exhibit = Exhibit.first_visible_exhibit
+    render "show"
   end
 
   def show
