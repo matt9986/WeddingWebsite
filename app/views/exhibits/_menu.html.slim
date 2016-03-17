@@ -2,4 +2,7 @@ div.menu
   h3 Exhibits
   ul
     - all_exhibits.each do |exhibit|
-      li exhibit.title
+      li = link_to exhibit.title, exhibit
+  h4 Admin
+  ul
+    li = link_to "New Section", new_exhibit_path

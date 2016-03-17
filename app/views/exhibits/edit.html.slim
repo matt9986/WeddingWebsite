@@ -1,0 +1,15 @@
+
+= form_for @exhibit do |f|
+  = f.label :title
+  = f.text_field :title
+  br
+  = f.label :body
+  = f.text_area :body
+  br
+  = f.label :picture_url
+  = f.url_field :picture_url
+  br
+  = f.label :enable
+  = f.check_box :enable
+  br
+  = f.submit
