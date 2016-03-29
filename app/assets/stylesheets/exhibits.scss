@@ -1,12 +1,64 @@
 // Place all the styles related to the Exhibits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  position: relative;
+  overflow:hidden;
+  padding: 0 0 0 2.5rem;
+  background-color:white; // TODO: let admin tools decide this
+}
 .menu {
-  float: left;
+  position: fixed;
+  top: 0; bottom: 0; left: -8rem;
   border-right-width: 2px;
   border-right-color: black;
   height: 100vh;
   border-right-style: solid;
-  width: 100px;
+  width: 10rem;
   margin-right: 10px;
+  background-color:white; // TODO: let admin tools decide this
+
+  &:hover {
+    left: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        border: none;
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        &:hover {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+img {
+  max-width: 100%;
+}
+@media screen and (min-width: 800px) {
+  .wrapper{
+    padding: 0 0 0 10.5rem;
+  }
+  .menu {
+    left: 0;
+  }
 }
