@@ -23,8 +23,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'slim-rails'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Use devise for users
+gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
