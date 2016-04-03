@@ -5,7 +5,7 @@ class ExhibitsController < ApplicationController
   end
 
   def show
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = Exhibit.where(id: params[:id]).first || Missing::Exhibit.new
 
     respond_to do |wants|
       wants.html # show.html.slim

@@ -1,11 +1,18 @@
 // Place all the styles related to the Exhibits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "LemonMilk";
+  src: url(/assets/LemonMilk.otf) format("truetype");
+}
+
 .wrapper {
   position: relative;
   overflow:hidden;
   padding: 0 0 0 2.5rem;
   background-color:white; // TODO: let admin tools decide this
+  font-family: "LemonMilk"; // TODO: And this
+  font-weight: 100;
 }
 .menu {
   position: fixed;
@@ -17,6 +24,7 @@
   width: 10rem;
   margin-right: 10px;
   background-color:white; // TODO: let admin tools decide this
+
 
   &:hover {
     left: 0;
