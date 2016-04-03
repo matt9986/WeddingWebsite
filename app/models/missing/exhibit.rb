@@ -17,7 +17,7 @@ module Missing
     end
 
     def picture_url
-      "/assets/penguin.gif"
+      "/penguin.gif"
     end
   end
 end
