@@ -1,4 +1,6 @@
 class ExhibitsController < ApplicationController
+  before_filter :user_in_wedding_party, only: [:new, :edit, :create, :update]
+
   def index
     @exhibit = Exhibit.first_visible_exhibit
     render "show"
@@ -58,5 +60,10 @@ class ExhibitsController < ApplicationController
 
   def exhibit_params
     params.require(:exhibit).permit(:title, :body, :picture_url, :order, :enable)
+  end
+
+  def user_in_wedding_party
+    redirect_to new_user_session_path unless current_user.present?
+    redirect_to exhibits_path if current_user.present? && !current_user.in_wedding_party?
   end
 end

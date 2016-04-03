@@ -9,7 +9,7 @@ div.menu
       - if current_user.in_wedding_party?
         li = link_to "New Section", new_exhibit_path
       li = link_to 'Profile', edit_user_registration_path
-      li = link_to 'Log out', destroy_user_session_path, method: :delete
+      li = link_to 'Log out', destroy_user_session_path
     - else
       li = link_to 'Login', new_user_session_path
       li = link_to 'Register', new_user_registration_path
