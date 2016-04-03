@@ -8,8 +8,12 @@ html
     / link rel="icon" type="image/png" href=file_path("favicon.png")
     / javascript:
     /  alert('Slim supports embedded javascript!')
+    javascript:
+      window.rails_env = '#{Rails.env}';
+
     == stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
+
   body
     div.wrapper
       == render "exhibits/menu"
