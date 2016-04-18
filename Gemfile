@@ -25,6 +25,8 @@ gem 'slim-rails'
 
 # Use devise for users
 gem 'devise'
+# Use FriendlyId for pretty urls
+gem 'friendly_id'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

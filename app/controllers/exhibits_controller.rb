@@ -7,7 +7,11 @@ class ExhibitsController < ApplicationController
   end
 
   def show
-    @exhibit = Exhibit.where(id: params[:id]).first || Missing::Exhibit.new
+    begin
+      @exhibit = Exhibit.friendly.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @exhibit = Missing::Exhibit.new
+    end
 
     respond_to do |wants|
       wants.html # show.html.slim
@@ -37,11 +41,11 @@ class ExhibitsController < ApplicationController
   end
 
   def edit
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = Exhibit.friendly.find(params[:id])
   end
 
   def update
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = Exhibit.friendly.find(params[:id])
 
     respond_to do |type|
       if @exhibit.update_attributes(exhibit_params)

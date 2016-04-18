@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331042520) do
+ActiveRecord::Schema.define(version: 20160417154024) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "title"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20160331042520) do
     t.integer  "order"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "slug"
   end
+
+  add_index "exhibits", ["slug"], name: "index_exhibits_on_slug", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             default: "", null: false
