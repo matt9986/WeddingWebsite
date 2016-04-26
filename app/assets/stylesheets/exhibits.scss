@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @font-face {
-  font-family: "LemonMilk";
-  // Geometos rounded
-  src: url(/assets/LemonMilk.otf) format("truetype");
+  font-family: "Geometos Rounded";
+  src: url(GeometosRounded.ttf) format("truetype");
 }
 
 .wrapper {
@@ -12,7 +11,7 @@
   overflow:hidden;
   padding: 0 0 0 2.5rem;
   background-color:white; // TODO: let admin tools decide this
-  font-family: "LemonMilk"; // TODO: And this
+  font-family: "Geometos Rounded"; // TODO: And this
   font-weight: 100;
 }
 .menu {
