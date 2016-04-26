@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @font-face {
   font-family: "Geometos Rounded";
-  src: url(GeometosRounded.ttf) format("truetype");
+  src: font-url("GeometosRounded.ttf") format("truetype");
 }
 
 .wrapper {
