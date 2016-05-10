@@ -27,6 +27,8 @@ gem 'slim-rails'
 gem 'devise'
 # Use FriendlyId for pretty urls
 gem 'friendly_id'
+# Use phrasing for editable copy in the UI
+gem 'phrasing'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

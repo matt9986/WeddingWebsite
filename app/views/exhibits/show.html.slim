@@ -1,6 +1,6 @@
 - if @exhibit.picture_url.present?
   img src="#{ @exhibit.picture_url }"
 h1
-  = @exhibit.title
+  = phrase(@exhibit, :title)
 p
-  = @exhibit.body
+  = phrase(@exhibit, :body)
