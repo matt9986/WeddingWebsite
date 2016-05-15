@@ -29,6 +29,9 @@ gem 'devise'
 gem 'friendly_id'
 # Use phrasing for editable copy in the UI
 gem 'phrasing'
+# Happy custom images with Carrierwave & Cloudinary
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'cloudinary'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -41,6 +44,8 @@ group :development, :test do
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # Use .env files for local configs
+  gem 'dotenv-rails'
 end
 
 group :production do

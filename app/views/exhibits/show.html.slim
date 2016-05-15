@@ -1,5 +1,4 @@
-- if @exhibit.picture_url.present?
-  img src="#{ @exhibit.picture_url }"
+= image_tag(@exhibit.photograph_url) if @exhibit.photograph?
 h1
   = phrase(@exhibit, :title)
 p

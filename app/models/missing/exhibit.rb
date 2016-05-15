@@ -1,5 +1,9 @@
 module Missing
   class Exhibit
+    def id
+      0
+    end
+
     def title
       "Under Construction"
     end
@@ -16,7 +20,11 @@ module Missing
       0
     end
 
-    def picture_url
+    def photograph?
+      true
+    end
+
+    def photograph_url
       "/penguin.gif"
     end
   end

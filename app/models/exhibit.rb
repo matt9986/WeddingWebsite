@@ -2,6 +2,8 @@ class Exhibit < ActiveRecord::Base
   include FriendlyId
   friendly_id :title, use: [:slugged] # TODO: add history
 
+  mount_uploader :photograph, PhotographUploader
+
   def self.first_visible_exhibit
     ordered_exhibits(false).first || Missing::Exhibit.new
   end
