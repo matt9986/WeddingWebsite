@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513021904) do
+ActiveRecord::Schema.define(version: 20160515191332) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "title"
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(version: 20160513021904) do
   end
 
   add_index "exhibits", ["slug"], name: "index_exhibits_on_slug", unique: true
+
+  create_table "phrasing_phrase_versions", force: :cascade do |t|
+    t.integer  "phrasing_phrase_id"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "phrasing_phrase_versions", ["phrasing_phrase_id"], name: "index_phrasing_phrase_versions_on_phrasing_phrase_id"
+
+  create_table "phrasing_phrases", force: :cascade do |t|
+    t.string   "locale"
+    t.string   "key"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",             default: "", null: false
