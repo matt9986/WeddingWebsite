@@ -3,11 +3,10 @@
 Sarah and I are getting married, so I'm building a website
 
 TODO:
-* Have editable sections
-* Add markdown styling for sections
-
 * Handle RSVPs?
+  Guests: first, last
+    Optional: Party, GuestParty
+  Response: attending, note
 * Map (Elizabeth Drawing & Link to zoo map)
 * No time/date on site instead of pswd protection
 * FAQ Section
-* Cloudinary images

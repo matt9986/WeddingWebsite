@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  enum access_level: {default: 0, wedding_party: 5}
   WEDDING_PARTY_ACCESS = 5
 
   def in_wedding_party?
-    WEDDING_PARTY_ACCESS <= access_level
+    wedding_party?
   end
 end
