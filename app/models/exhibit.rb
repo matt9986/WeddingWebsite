@@ -1,6 +1,6 @@
 class Exhibit < ActiveRecord::Base
   include FriendlyId
-  friendly_id :title, use: [:slugged] # TODO: add history
+  friendly_id :title, use: [:slugged, :history]
 
   mount_uploader :photograph, PhotographUploader
 
