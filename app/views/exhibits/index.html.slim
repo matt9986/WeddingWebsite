@@ -1,2 +1,25 @@
-h1 We're getting married!
-p This website will be updated with more details as they come to mind.
+h1 Listing exhibits
+
+table
+  thead
+    tr
+      th Title
+      th Order
+      th Archived
+      th
+      th
+      th
+
+  tbody
+    - @exhibits.each do |exhibit|
+      tr
+        td = exhibit.title
+        td = exhibit.order
+        td = exhibit.archived
+        td = link_to 'Show', exhibit
+        td = link_to 'Edit', edit_exhibit_path(exhibit)
+        td = link_to 'Archive', exhibit, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Exhibit', new_exhibit_path

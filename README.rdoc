@@ -4,9 +4,10 @@ Sarah and I are getting married, so I'm building a website
 
 TODO:
 * Handle RSVPs?
-  Guests: first, last
-    Optional: Party, GuestParty
-  Response: attending, note
+  Exhibit for RSVPs
+  Multiple response fields (music & food)
 * Map (Elizabeth Drawing & Link to zoo map)
 * No time/date on site instead of pswd protection
 * FAQ Section
+* JSON support
+* take $$ for gifts

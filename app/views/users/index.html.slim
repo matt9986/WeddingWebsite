@@ -1,0 +1,29 @@
+h1 Listing Users (#{@users.count})
+
+table
+  thead
+    tr
+      th First
+      th Last
+      th Email
+      th Permissions
+      /th
+      /th
+      /th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.first_name
+        td = user.last_name
+        td = user.email
+        td
+          = form_for user do |f|
+            = f.select(:access_level, User.access_levels.keys.map{|level| [level.titleize, level]}, {}, onchange: "this.form.submit();")
+        /td = link_to 'Show', user
+        /td = link_to 'Edit', edit_guest_path(user)
+        /td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+/= link_to 'New User', new_guest_registration

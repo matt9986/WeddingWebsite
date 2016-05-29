@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'exhibits#index'
   resources :exhibits
+  devise_for :users
+  resources :users, only: [:index, :update]
+
+  resources :guests do
+    get "find", on: :collection
+  end
+
+  resources :weddings, only: :index
+  root 'exhibits#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
