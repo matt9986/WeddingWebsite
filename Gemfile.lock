@@ -118,6 +118,12 @@ GEM
       rails (>= 3.2.0)
       railties (>= 3.2)
       sass
+    postmark (1.7.1)
+      json
+      rake
+    postmark-rails (0.12.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.7.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -223,6 +229,7 @@ DEPENDENCIES
   jquery-rails
   mysql2
   phrasing
+  postmark-rails
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)

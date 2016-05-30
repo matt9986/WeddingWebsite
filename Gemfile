@@ -33,6 +33,9 @@ gem 'phrasing'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'cloudinary'
 
+# Emailing on heroku
+gem 'postmark-rails', group: :production
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
