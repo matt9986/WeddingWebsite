@@ -1,0 +1,6 @@
+.center-text
+  = image_tag(@exhibit.photograph_url) if @exhibit.photograph?
+  h1
+    = phrase(@exhibit, :title)
+  p
+    = phrase(@exhibit, :body)
