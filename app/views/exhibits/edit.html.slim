@@ -12,4 +12,8 @@
   = f.label :enable
   = f.check_box :enable
   br
+  - Exhibit.templates.each do |key, value|
+    = f.label :template, key.humanize, value: key
+    = f.radio_button :template, key
+  br
   = f.submit

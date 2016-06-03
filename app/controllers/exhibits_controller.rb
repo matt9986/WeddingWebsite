@@ -63,7 +63,7 @@ class ExhibitsController < ApplicationController
   private
 
   def exhibit_params
-    params.require(:exhibit).permit(:title, :body, :order, :enable, :photograph)
+    params.require(:exhibit).permit(:title, :body, :order, :enable, :photograph, :template)
   end
 
   def user_in_wedding_party
