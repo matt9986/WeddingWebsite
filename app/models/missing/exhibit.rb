@@ -27,5 +27,9 @@ module Missing
     def photograph_url
       "/penguin.gif"
     end
+
+    def template
+      :default
+    end
   end
 end
