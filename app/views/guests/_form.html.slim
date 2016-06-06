@@ -15,4 +15,8 @@
   .field
     = f.label :alias
     = f.text_field :alias
+  .field
+    = f.fields_for :tour_guest, @guest.tour_guest || TourGuest.new do |ff|
+      = ff.label :tour_id
+      = ff.select(:tour_id, Tour.all.map{|tour| [tour.title, tour.id]}, include_blank: true)
   .actions = f.submit
