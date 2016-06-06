@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # resources :tour_guests
+  resources :tours
   resources :exhibits
   devise_for :users
   resources :users, only: [:index, :update]

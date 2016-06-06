@@ -1,0 +1,30 @@
+= form_for @tour do |f|
+  - if @tour.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@tour.errors.count, "error")} prohibited this tour from being saved:"
+      ul
+        - @tour.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  br
+  h2 Guests
+  table
+    thead
+      tr
+        th First
+        th Alias
+        th Last
+        th RSVP
+    tbody
+    - empties = 10 - @tour.guests.count
+    - (empties > 3 ? empties : 3).times{ @tour.guests.build}
+    = f.fields_for :guests do |ff|
+      tr
+        th = ff.text_field :first
+        th = ff.text_field :alias
+        th = ff.text_field :last
+        th = ff.select(:rsvp, Guest.rsvps.keys.map{|status| [status.titleize, status]})
+  .actions = f.submit

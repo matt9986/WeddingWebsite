@@ -1,0 +1,15 @@
+= form_for @tour_guest do |f|
+  - if @tour_guest.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@tour_guest.errors.count, "error")} prohibited this tour_guest from being saved:"
+      ul
+        - @tour_guest.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :tour_id
+    = f.number_field :tour_id
+  .field
+    = f.label :guest_id
+    = f.number_field :guest_id
+  .actions = f.submit

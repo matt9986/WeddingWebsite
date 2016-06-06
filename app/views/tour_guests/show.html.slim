@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Tour:
+  = @tour_guest.tour_id
+p
+  strong Guest:
+  = @tour_guest.guest_id
+
+= link_to 'Edit', edit_tour_guest_path(@tour_guest)
+'|
+= link_to 'Back', tour_guests_path

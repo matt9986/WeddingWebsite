@@ -1,0 +1,23 @@
+h1 Listing tour_guests
+
+table
+  thead
+    tr
+      th Tour
+      th Guest
+      th
+      th
+      th
+
+  tbody
+    - @tour_guests.each do |tour_guest|
+      tr
+        td = tour_guest.tour_id
+        td = tour_guest.guest_id
+        td = link_to 'Show', tour_guest
+        td = link_to 'Edit', edit_tour_guest_path(tour_guest)
+        td = link_to 'Destroy', tour_guest, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Tour guest', new_tour_guest_path
