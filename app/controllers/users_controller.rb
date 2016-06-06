@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :user_in_wedding_party # For all actions, this controller isn't exactly safe
+  before_filter :ensure_admin # For all actions, this controller isn't exactly safe
 
   def index
     @users = User.all
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_in_wedding_party
+  def ensure_admin
     redirect_to new_user_session_path unless current_user.present?
-    redirect_to exhibits_path if current_user.present? && !current_user.in_wedding_party?
+    redirect_to exhibits_path if current_user.present? && !current_user.admin?
   end
 
   def user_params
