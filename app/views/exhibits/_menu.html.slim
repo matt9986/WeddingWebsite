@@ -1,5 +1,5 @@
 div.menu
-  h2 = phrase("wedding-title")
+  h2 = link_to phrase("wedding-title"), :root
   ul
     - all_exhibits.each do |exhibit|
       li = link_to exhibit.title, exhibit

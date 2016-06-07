@@ -30,6 +30,12 @@
     left: 0;
   }
 
+  a {
+    text-decoration: none;
+    display: block;
+    color: black;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;
@@ -42,15 +48,8 @@
     }
 
     li {
-      border-bottom: 1px solid #ccc;
-      &:last-child {
-        border: none;
-      }
-
+      padding-top: 0.7rem;
       a {
-        text-decoration: none;
-        display: block;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
 
