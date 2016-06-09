@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :guest_lists
   # resources :tour_guests
   resources :tours
   resources :exhibits

@@ -36,6 +36,9 @@ gem 'cloudinary'
 # Emailing on heroku
 gem 'postmark-rails', group: :production
 
+# Spreadsheet importing
+gem 'roo'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
