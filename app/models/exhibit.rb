@@ -1,7 +1,7 @@
 class Exhibit < ActiveRecord::Base
   include FriendlyId
   friendly_id :title, use: [:slugged, :history]
-  enum template: {default: 0, center_text: 1}
+  enum template: {default: 0, center_text: 1, rsvp_top_text: 2}
 
   mount_uploader :photograph, PhotographUploader
 

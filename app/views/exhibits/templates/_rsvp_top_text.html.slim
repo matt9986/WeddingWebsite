@@ -1,0 +1,10 @@
+.rsvp-top-text
+  = image_tag(@exhibit.photograph_url) if @exhibit.photograph?
+  h1
+    = phrase(@exhibit, :title)
+  p
+    = phrase(@exhibit, :body)
+  = form_for :lookup_rsvp, method: :get, url: find_guests_path do |f|
+    = f.text_field :first, placeholder: "First name"
+    = f.text_field :last, placeholder: "Last name"
+    = f.submit "Lookup your RSVP"

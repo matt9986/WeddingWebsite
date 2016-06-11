@@ -23,8 +23,8 @@
     - (empties > 3 ? empties : 3).times{ @tour.guests.build}
     = f.fields_for :guests do |ff|
       tr
-        th = ff.text_field :first
-        th = ff.text_field :alias
-        th = ff.text_field :last
-        th = ff.select(:rsvp, Guest.rsvps.keys.map{|status| [status.titleize, status]})
+        td = ff.text_field :first
+        td = ff.text_field :alias
+        td = ff.text_field :last
+        td = ff.select(:rsvp, Guest.rsvps.keys.map{|status| [status.titleize, status]})
   .actions = f.submit

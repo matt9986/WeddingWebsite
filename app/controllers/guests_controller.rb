@@ -8,13 +8,16 @@ class GuestsController < ApplicationController
     @guests = Guest.all
   end
 
+  # POST /guests/find
+  # POST /guests/find.json
   def find
-    first_or_alias = params[:first].downcase
-    @guest = Guest.where("lower(last) LIKE ?", params[:last].downcase).where(
+    rsvp_params = params.require(:lookup_rsvp)
+    first_or_alias = rsvp_params[:first].downcase
+    @guest = Guest.where("lower(last) LIKE ?", rsvp_params[:last].downcase).where(
                         "lower(first) LIKE ? OR lower(alias) LIKE ?", first_or_alias, first_or_alias).first
     respond_to do |format|
       if @guest
-        format.html { redirect_to @guest }
+        format.html { redirect_to guest_rsvp_path @guest }
         format.json { render :show, location: @guest }
       else
         raise "Nope"
@@ -36,6 +39,24 @@ class GuestsController < ApplicationController
 
   # GET /guests/1/edit
   def edit
+  end
+
+  # GET /guests/1/rsvp
+  def rsvp
+    @guest = Guest.find(params[:guest_id])
+  end
+
+  def update_rsvp
+    @guest = Guest.find(params[:guest_id])
+    respond_to do |format|
+      if @guest.update(rsvp_params)
+        format.html { redirect_to root_path, notice: "Thank you so much for R.S.V.P.ing." }
+        format.json { render :show, status: :ok, location: @guest }
+      else
+        format.html { render :edit }
+        format.json { render json: @guest.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /guests
@@ -87,6 +108,10 @@ class GuestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def guest_params
       params.require(:guest).permit(:first, :last, :alias, tour_guest_attributes: [:tour_id])
+    end
+
+    def rsvp_params
+      params.require(:guest).permit(:rsvp, tour_mates_attributes: [:id, :rsvp])
     end
 
     def user_in_wedding_party

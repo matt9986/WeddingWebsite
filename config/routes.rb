@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :guest_lists
+  resources :guest_lists, only: [:new, :create]
   # resources :tour_guests
   resources :tours
   resources :exhibits
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :guests do
     get "find", on: :collection
+    get "rsvp"
+    match "rsvp", to: :update_rsvp, via: [:put, :patch]
   end
 
   resources :weddings, only: :index
