@@ -1,0 +1,14 @@
+
+form {
+  input[type="radio"] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -ms-appearance: checkbox;     /* not currently supported */
+    -o-appearance: checkbox;      /* not currently supported */
+  }
+  input[type="text"] {
+    border: black;
+    border-width: 0px 0px 1px;
+    border-style: solid;
+  }
+}

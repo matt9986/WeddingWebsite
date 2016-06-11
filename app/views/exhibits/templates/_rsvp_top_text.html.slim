@@ -6,5 +6,7 @@
     = phrase(@exhibit, :body)
   = form_for :lookup_rsvp, method: :get, url: find_guests_path do |f|
     = f.text_field :first, placeholder: "First name"
+    span style="margin: 5px"
     = f.text_field :last, placeholder: "Last name"
+    span style="margin: 5px"
     = f.submit "Lookup your RSVP"

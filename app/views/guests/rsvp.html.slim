@@ -2,13 +2,13 @@
   = form_for @guest, url: guest_rsvp_path do |f|
     h2 R.S.V.P. for #{f.object.first} #{f.object.last}
     / penguins go here
-    = f.radio_button :rsvp, :accept, class: "check-box"
-    = f.label :rsvp, "Accept with pleasure", value: :accept
-    br
-    = f.radio_button :rsvp, :decline, class: "check-box"
-    = f.label :rsvp, "Decline with regret", value: :decline
-    br
-    br
+    /= f.radio_button :rsvp, :accept, class: "check-box"
+    /= f.label :rsvp, "Accept with pleasure", value: :accept
+    /br
+    /= f.radio_button :rsvp, :decline, class: "check-box"
+    /= f.label :rsvp, "Decline with regret", value: :decline
+    /br
+    /br
     table
       tbody
         = f.fields_for :tour_mates do |ff|
