@@ -8,9 +8,6 @@
     = f.radio_button :rsvp, :decline, class: "check-box"
     = f.label :rsvp, "Decline with regret", value: :decline
     br
-    / = f.label :song_request, "I will dance if you play this song:"
-    / = f.text_field :song_request
-    / br
     br
     table
       tbody
@@ -20,4 +17,8 @@
             td = ff.object.alias
             td = ff.object.last
             td = ff.select(:rsvp, Guest.rsvps.keys.map{|status| [status.titleize, status]})
+    br
+    = f.label :song_request, "I will dance if you play this song:"
+    = f.text_field :song_request
+    br
     .actions = f.submit

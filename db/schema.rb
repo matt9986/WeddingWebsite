@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604051554) do
+ActiveRecord::Schema.define(version: 20160611185413) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "title"
@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20160604051554) do
     t.string   "first"
     t.string   "last"
     t.string   "alias"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "rsvp",       default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "rsvp",         default: 0, null: false
+    t.string   "song_request"
   end
 
   create_table "phrasing_phrase_versions", force: :cascade do |t|

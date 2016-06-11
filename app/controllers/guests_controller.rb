@@ -111,7 +111,7 @@ class GuestsController < ApplicationController
     end
 
     def rsvp_params
-      params.require(:guest).permit(:rsvp, tour_mates_attributes: [:id, :rsvp])
+      params.require(:guest).permit(:rsvp, :song_request, tour_mates_attributes: [:id, :rsvp])
     end
 
     def user_in_wedding_party
