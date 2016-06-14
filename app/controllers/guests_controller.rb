@@ -20,8 +20,7 @@ class GuestsController < ApplicationController
         format.html { redirect_to guest_rsvp_path @guest }
         format.json { render :show, location: @guest }
       else
-        raise "Nope"
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: "We can't find your invitation, please email wedding@mattandsarahgetmarried.com for help" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
       end
     end
