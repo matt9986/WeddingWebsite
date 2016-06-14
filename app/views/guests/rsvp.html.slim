@@ -14,7 +14,7 @@
         = f.fields_for :tour_mates do |ff|
           tr
             td = ff.object.first
-            td = ff.object.alias
+            / td = ff.object.alias
             td = ff.object.last
             td = ff.select(:rsvp, Guest.rsvps.keys.map{|status| [status.titleize, status]})
     br
