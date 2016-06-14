@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611185413) do
+ActiveRecord::Schema.define(version: 20160614055611) do
 
   create_table "exhibits", force: :cascade do |t|
     t.string   "title"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160611185413) do
     t.datetime "updated_at",               null: false
     t.integer  "rsvp",         default: 0, null: false
     t.string   "song_request"
+    t.string   "rsvp_comment"
   end
 
   create_table "phrasing_phrase_versions", force: :cascade do |t|
