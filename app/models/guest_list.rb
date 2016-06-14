@@ -24,7 +24,9 @@ class GuestList
         title: tour_title(guests_array),
         guests_attributes: guests_array,
       })
-      tour.save!
+      unless tour.save
+        throw tour.title, tour.errors.messages.to_s
+      end
       @guest_count += tour.guests.count
     end
     @saved = true
